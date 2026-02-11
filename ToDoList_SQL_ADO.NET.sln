@@ -36,12 +36,39 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{5BD84500-DE72-4565-BF4E-8E22C0511F33}"
+	ProjectSection(SolutionItems) = preProject
+		SQL\Queries\Tasks\Delete.sql = SQL\Queries\Tasks\Delete.sql
+		SQL\Queries\Tasks\FullData.sql = SQL\Queries\Tasks\FullData.sql
+		SQL\Queries\Tasks\GetById.sql = SQL\Queries\Tasks\GetById.sql
+		SQL\Queries\Tasks\Insert.sql = SQL\Queries\Tasks\Insert.sql
+		SQL\Queries\Tasks\List.sql = SQL\Queries\Tasks\List.sql
+		SQL\Queries\Tasks\Update.sql = SQL\Queries\Tasks\Update.sql
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Labels", "Labels", "{80D8170F-DDB5-4A1D-9995-8A41A5F23083}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Comments", "Comments", "{C3B75AE9-5148-447C-9D77-B997B3CBC3C3}"
+	ProjectSection(SolutionItems) = preProject
+		SQL\Queries\Labels\Delete.sql = SQL\Queries\Labels\Delete.sql
+		SQL\Queries\Labels\GetById.sql = SQL\Queries\Labels\GetById.sql
+		SQL\Queries\Labels\Insert.sql = SQL\Queries\Labels\Insert.sql
+		SQL\Queries\Labels\List.sql = SQL\Queries\Labels\List.sql
+		SQL\Queries\Labels\Update.sql = SQL\Queries\Labels\Update.sql
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoList.ADO_NET", "TodoList.ADO_NET\TodoList.ADO_NET.csproj", "{13C528C8-4540-4802-8C23-A16DDBB1DDEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TaskComments", "TaskComments", "{A768CEDA-6CDE-4E87-B634-EF968449C2EB}"
+	ProjectSection(SolutionItems) = preProject
+		SQL\Queries\TaskComments\Delete.sql = SQL\Queries\TaskComments\Delete.sql
+		SQL\Queries\TaskComments\Insert.sql = SQL\Queries\TaskComments\Insert.sql
+		SQL\Queries\TaskComments\ListByTask.sql = SQL\Queries\TaskComments\ListByTask.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TaskLabels", "TaskLabels", "{3378790D-55C5-4F3D-B64E-8512E9F93C7A}"
+	ProjectSection(SolutionItems) = preProject
+		SQL\Queries\TaskLabels\Add.sql = SQL\Queries\TaskLabels\Add.sql
+		SQL\Queries\TaskLabels\GetByTask.sql = SQL\Queries\TaskLabels\GetByTask.sql
+		SQL\Queries\TaskLabels\Remove.sql = SQL\Queries\TaskLabels\Remove.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,7 +109,8 @@ Global
 		{188F9150-A632-4AA0-8364-F4F31CF5B083} = {0DE18A1E-D148-43DC-B21E-79FBF1D9592E}
 		{5BD84500-DE72-4565-BF4E-8E22C0511F33} = {D1BF557A-843D-492C-B2E1-8F5BCA539BBB}
 		{80D8170F-DDB5-4A1D-9995-8A41A5F23083} = {D1BF557A-843D-492C-B2E1-8F5BCA539BBB}
-		{C3B75AE9-5148-447C-9D77-B997B3CBC3C3} = {D1BF557A-843D-492C-B2E1-8F5BCA539BBB}
 		{13C528C8-4540-4802-8C23-A16DDBB1DDEA} = {7209E96C-8B83-4C34-ACCA-69450D0F8462}
+		{A768CEDA-6CDE-4E87-B634-EF968449C2EB} = {D1BF557A-843D-492C-B2E1-8F5BCA539BBB}
+		{3378790D-55C5-4F3D-B64E-8512E9F93C7A} = {D1BF557A-843D-492C-B2E1-8F5BCA539BBB}
 	EndGlobalSection
 EndGlobal

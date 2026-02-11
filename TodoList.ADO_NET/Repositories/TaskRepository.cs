@@ -3,6 +3,7 @@ using ToDoList.Application.Repositories;
 using ToDoList.Domain.Models;
 using TodoList.ADO_NET.Mapping;
 using TodoList.ADO_NET.Sql;
+using ToDoList.Domain.Dto;
 
 namespace TodoList.ADO_NET.Repositories;
 
@@ -36,6 +37,18 @@ public sealed class TaskRepository : ITaskRepository
         var list = new List<TaskItem>();
         while (await r.ReadAsync(cancellationToken))
             list.Add(TaskMapper.Map(r));
+        return list;
+    }
+
+    public async Task<IReadOnlyList<TaskFullDataDto>> GetFullDataAsync(CancellationToken cancellationToken = default)
+    {
+        var sql = _queries.Load("Tasks/FullData.sql");
+        await using var conn = await _dataSource.OpenConnectionAsync(cancellationToken);
+        await using var cmd = new NpgsqlCommand(sql, conn);
+        await using var r = await cmd.ExecuteReaderAsync(cancellationToken);
+        var list = new List<TaskFullDataDto>();
+        while (await r.ReadAsync(cancellationToken))
+            list.Add(TaskFullDataMapper.Map(r));
         return list;
     }
 
