@@ -1,0 +1,1 @@
+docker run --name pg-todo-list -e POSTGRES_USER=postgres -e POSTGRES_DB=todo_list_db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres:16
