@@ -22,6 +22,9 @@ public class TaskService : ITaskService
     public Task<IReadOnlyList<ToDoList.Domain.Dto.TaskFullDataDto>> GetFullDataAsync(CancellationToken cancellationToken = default)
         => _taskRepository.GetFullDataAsync(cancellationToken);
 
+    public Task<IReadOnlyList<ToDoList.Domain.Dto.TaskWithCommentDto>> GetWithCommentsAsync(CancellationToken cancellationToken = default)
+        => _taskRepository.GetWithCommentsAsync(cancellationToken);
+
     public Task CreateAsync(ToDoList.Domain.Models.TaskItem task, CancellationToken cancellationToken = default)
         => _taskRepository.CreateAsync(task, cancellationToken);
 

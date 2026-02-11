@@ -17,9 +17,16 @@ INSERT INTO task (id, title, description, status, priority, due_at, created_at, 
   ('b0000001-0000-0000-0000-000000000004'::uuid, 'Task 4 - no labels', 'Fourth task.', 'todo', 'medium', NULL, now(), now(), NULL)
 ON CONFLICT (id) DO NOTHING;
 
--- Task–Label links 
+-- Task–Label links
 INSERT INTO task_label (task_id, label_id) VALUES
   ('b0000001-0000-0000-0000-000000000002'::uuid, 'a0000001-0000-0000-0000-000000000001'::uuid), -- Task 2: Important
   ('b0000001-0000-0000-0000-000000000002'::uuid, 'a0000001-0000-0000-0000-000000000003'::uuid), -- Task 2: Investigate
   ('b0000001-0000-0000-0000-000000000003'::uuid, 'a0000001-0000-0000-0000-000000000002'::uuid)  -- Task 3: Spam
 ON CONFLICT (task_id, label_id) DO NOTHING;
+
+-- Task comments 
+INSERT INTO task_comment (id, task_id, body, created_at) VALUES
+  ('c0000001-0000-0000-0000-000000000001'::uuid, 'b0000001-0000-0000-0000-000000000001'::uuid, 'First comment on Task 1.', now()), -- Task 1: First comment
+  ('c0000001-0000-0000-0000-000000000002'::uuid, 'b0000001-0000-0000-0000-000000000001'::uuid, 'Second comment on Task 1.', now()), -- Task 1: Second comment
+  ('c0000001-0000-0000-0000-000000000003'::uuid, 'b0000001-0000-0000-0000-000000000003'::uuid, 'Spam task comment.', now()) -- Task 3: Spam comment
+ON CONFLICT (id) DO NOTHING;

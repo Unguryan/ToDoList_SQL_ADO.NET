@@ -11,6 +11,8 @@ public interface ITaskRepository
 
     Task<IReadOnlyList<TaskFullDataDto>> GetFullDataAsync(CancellationToken cancellationToken = default);
 
+    Task<IReadOnlyList<TaskWithCommentDto>> GetWithCommentsAsync(CancellationToken cancellationToken = default);
+
     Task CreateAsync(TaskItem task, CancellationToken cancellationToken = default);
 
     Task UpdateAsync(TaskItem task, CancellationToken cancellationToken = default);

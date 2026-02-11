@@ -37,6 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{5BD84500
 		SQL\Queries\Tasks\Delete.sql = SQL\Queries\Tasks\Delete.sql
 		SQL\Queries\Tasks\FullData.sql = SQL\Queries\Tasks\FullData.sql
 		SQL\Queries\Tasks\GetById.sql = SQL\Queries\Tasks\GetById.sql
+		SQL\Queries\Tasks\GetWithComments.sql = SQL\Queries\Tasks\GetWithComments.sql
 		SQL\Queries\Tasks\Insert.sql = SQL\Queries\Tasks\Insert.sql
 		SQL\Queries\Tasks\List.sql = SQL\Queries\Tasks\List.sql
 		SQL\Queries\Tasks\Update.sql = SQL\Queries\Tasks\Update.sql

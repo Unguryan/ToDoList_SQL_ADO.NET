@@ -52,6 +52,18 @@ public sealed class TaskRepository : ITaskRepository
         return list;
     }
 
+    public async Task<IReadOnlyList<TaskWithCommentDto>> GetWithCommentsAsync(CancellationToken cancellationToken = default)
+    {
+        var sql = _queries.Load("Tasks/GetWithComments.sql");
+        await using var conn = await _dataSource.OpenConnectionAsync(cancellationToken);
+        await using var cmd = new NpgsqlCommand(sql, conn);
+        await using var r = await cmd.ExecuteReaderAsync(cancellationToken);
+        var list = new List<TaskWithCommentDto>();
+        while (await r.ReadAsync(cancellationToken))
+            list.Add(TaskWithCommentMapper.Map(r));
+        return list;
+    }
+
     public async Task CreateAsync(TaskItem task, CancellationToken cancellationToken = default)
     {
         var sql = _queries.Load("Tasks/Insert.sql");

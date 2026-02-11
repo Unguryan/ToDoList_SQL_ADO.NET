@@ -31,6 +31,13 @@ public class TasksController : ControllerBase
         return Ok(items);
     }
 
+    [HttpGet("with-comments")]
+    public async Task<ActionResult<IReadOnlyList<ToDoList.Domain.Dto.TaskWithCommentDto>>> GetWithComments(CancellationToken cancellationToken)
+    {
+        var items = await _taskService.GetWithCommentsAsync(cancellationToken);
+        return Ok(items);
+    }
+
     [HttpGet("{id:guid}")]
     public async Task<ActionResult<TaskItem>> GetById(Guid id, CancellationToken cancellationToken)
     {
