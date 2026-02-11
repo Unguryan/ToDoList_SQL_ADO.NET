@@ -22,9 +22,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Api", "ToDo.Api\ToDo.Api.csproj", "{3936C029-2D4B-4525-A2A9-1AB609305ADD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{0DE18A1E-D148-43DC-B21E-79FBF1D9592E}"
-	ProjectSection(SolutionItems) = preProject
-		SQL\Text.txt = SQL\Text.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queries", "Queries", "{D1BF557A-843D-492C-B2E1-8F5BCA539BBB}"
 EndProject
