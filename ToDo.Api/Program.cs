@@ -4,17 +4,16 @@ using TodoList.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 var sqlQueriesPath = Path.Combine(AppContext.BaseDirectory, "Sql", "Queries");
 builder.Services.AddDatabase(builder.Configuration, sqlQueriesPath);
 builder.Services.AddInfrastructure();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 app.MapControllers();

@@ -76,4 +76,6 @@ cd ToDo.Api
 dotnet run
 ```
 
+**Swagger UI:** when the API is running, open `https://localhost:<port>/swagger` (or `http://localhost:<port>/swagger`) to browse and try the endpoints.
+
 Connection string in `appsettings.Development.json` points at `localhost:5432`, database `todo_list_db`.
