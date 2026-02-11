@@ -10,4 +10,8 @@
     <ProjectReference Include="..\ToDoList.Domain\ToDoList.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
 using TodoList.ADO_NET;
+using TodoList.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 var sqlQueriesPath = Path.Combine(AppContext.BaseDirectory, "Sql", "Queries");
 builder.Services.AddDatabase(builder.Configuration, sqlQueriesPath);
+builder.Services.AddInfrastructure();
 
 var app = builder.Build();
 
