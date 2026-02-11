@@ -10,4 +10,16 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoList.Application\ToDoList.Application.csproj" />
+    <ProjectReference Include="..\TodoList.ADO_NET\TodoList.ADO_NET.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\SQL\Queries\**\*.sql">
+      <Link>Sql\Queries\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

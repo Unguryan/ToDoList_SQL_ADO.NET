@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace ToDoList.Domain.Enums;
 
-public enum TaskPriority
+public enum TaskItemPriority
 {
     [Description("low")]
     Low = 0,

@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace ToDoList.Domain.Enums;
 
-public enum TaskStatus
+public enum TaskItemStatus
 {
     [Description("todo")]
     Todo = 0,

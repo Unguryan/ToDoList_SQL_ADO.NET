@@ -2,7 +2,7 @@ using ToDoList.Domain.Enums;
 
 namespace ToDoList.Domain.Models;
 
-public class Task
+public class TaskItem
 {
     public Guid Id { get; set; }
 
@@ -10,9 +10,9 @@ public class Task
 
     public string? Description { get; set; }
 
-    public Enums.TaskStatus Status { get; set; } = Enums.TaskStatus.Todo;
+    public TaskItemStatus Status { get; set; } = TaskItemStatus.Todo;
 
-    public TaskPriority Priority { get; set; } = TaskPriority.Medium;
+    public TaskItemPriority Priority { get; set; } = TaskItemPriority.Medium;
 
     public DateTimeOffset? DueAt { get; set; }
 

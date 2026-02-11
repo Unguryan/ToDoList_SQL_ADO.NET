@@ -1,8 +1,11 @@
+using TodoList.ADO_NET;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+var sqlQueriesPath = Path.Combine(AppContext.BaseDirectory, "Sql", "Queries");
+builder.Services.AddDatabase(builder.Configuration, sqlQueriesPath);
 
 var app = builder.Build();
 

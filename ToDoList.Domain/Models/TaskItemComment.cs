@@ -1,6 +1,6 @@
 namespace ToDoList.Domain.Models;
 
-public class TaskComment
+public class TaskItemComment
 {
     public Guid Id { get; set; }
 

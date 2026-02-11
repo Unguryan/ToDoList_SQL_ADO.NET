@@ -1,6 +1,6 @@
 namespace ToDoList.Domain.Models;
 
-public class TaskLabel
+public class TaskItemLabel
 {
     public Guid TaskId { get; set; }
 
