@@ -33,20 +33,38 @@ Get-Content .\SQL\Migrations\002_indexes.sql | docker exec -i pg-todo-list psql 
 Get-Content .\SQL\Migrations\003_seed.sql | docker exec -i pg-todo-list psql -U postgres -d todo_list_db
 ```
 
-## To test
+## Queries (one per use case)
 
-After running `003_seed.sql`, from the **repository root** you can run the FullData query:
+- **FullData** – All tasks with or without labels (one query). Returns task fields + aggregated label names per task.  
+  SQL: `SQL/Queries/Tasks/FullData.sql`  
+  API: `GET /api/tasks/full-data`
 
-**Bash:**
+- **GetWithComments** – Only tasks that have at least one comment (one query). Returns task title + comment body per row.  
+  SQL: `SQL/Queries/Tasks/GetWithComments.sql`  
+  API: `GET /api/tasks/with-comments`
+
+## To test (run SQL from repo root)
+
+After running `003_seed.sql`:
+
+**FullData (tasks + labels):**
 
 ```bash
 docker exec -i pg-todo-list psql -U postgres -d todo_list_db < SQL/Queries/Tasks/FullData.sql
 ```
 
-**PowerShell:**
-
 ```powershell
 Get-Content .\SQL\Queries\Tasks\FullData.sql | docker exec -i pg-todo-list psql -U postgres -d todo_list_db
+```
+
+**GetWithComments (tasks with comments only):**
+
+```bash
+docker exec -i pg-todo-list psql -U postgres -d todo_list_db < SQL/Queries/Tasks/GetWithComments.sql
+```
+
+```powershell
+Get-Content .\SQL\Queries\Tasks\GetWithComments.sql | docker exec -i pg-todo-list psql -U postgres -d todo_list_db
 ```
 
 ## 3. Run the API
